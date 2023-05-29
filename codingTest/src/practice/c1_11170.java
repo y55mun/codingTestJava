@@ -19,12 +19,9 @@ public class c1_11170 {
 			
 			System.out.println(solve(n, m));
 		}
-
-		selected = new int[m+1];
 	}
 	
 	static int t, n, m;
-	static int[] selected;
 	
 
 	static int solve(int n, int m) {
