@@ -1,4 +1,4 @@
-package codingTest;
+package FastCampus;
 
 import java.io.*;
 import java.util.*;
