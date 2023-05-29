@@ -15,7 +15,7 @@ public class c2_15649 {
 	}
 
 	static int N, M;
-	static int[] selected;
+	static int[] selected, used;
 
 	// 만약 M개를 전부 고름 => 조건에 맞는 탐색 한가지 성공
 	// 아직 M개를 고르지 않음 => K번째부터 M번째 원소를 조건에 맞게 고르는 모든 방법을 시도
@@ -27,15 +27,23 @@ public class c2_15649 {
 			sb.append('\n');
 		} else {
 			for (int cand = 1; cand <= N; cand++) {
-				boolean isUsed = false;
-				for (int i = 1; i < k; i++)
-					if (cand == selected[i])
-						isUsed = true;
-				if (!isUsed) {
-					selected[k] = cand;
-					rec_func(k + 1);
-					selected[k] = 0;
-				}
+				if (used[cand] == 1) continue;
+				
+				selected[k] = cand; used[cand] = 1;
+				
+				rec_func(k + 1);
+				
+				selected[k] = 0; used[cand] = 0;
+				
+//				boolean isUsed = false;
+//				for (int i = 1; i < k; i++)
+//					if (cand == selected[i])
+//						isUsed = true;
+//				if (!isUsed) {
+//					selected[k] = cand;
+//					rec_func(k + 1);
+//					selected[k] = 0;
+//				}
 
 			}
 		}
