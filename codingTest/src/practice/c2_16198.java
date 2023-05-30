@@ -10,12 +10,7 @@ public class c2_16198 {
 	
 	static void input() {
 		FastReader scan = new FastReader();
-		
-		n = scan.nextInt();
-//		for(int i=1; i<=n; i++) {
-//			w[i] = scan.nextInt();
-//		}
-		
+
 		List<Integer> list = new ArrayList<>();
 		for(int i=0; i<n; i++) {
 			list.add(scan.nextInt());
