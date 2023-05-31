@@ -18,7 +18,7 @@ public class c6_4796 {
 			
 			if (l == 0 && p ==0 && v ==0) break;
 			
-			maxDays = (l*(v/p)) + (v%p);
+			maxDays = (l*(v/p)) + Math.min(l, v%p);
 			sb.append("Case "+caseNumber + ": "+maxDays+"\n");
 			
 			caseNumber++;
