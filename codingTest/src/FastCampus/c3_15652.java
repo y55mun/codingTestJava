@@ -3,6 +3,11 @@ package FastCampus;
 import java.io.*;
 import java.util.*;
 
+/*
+ * 중복 허용해서 고르기
+ * 비내림차순: 2 3, 3 2 도 가능했었는데, 이 경우엔 2 3만 가능!!
+ * */
+
 public class c3_15652 {
 	static StringBuilder sb = new StringBuilder();
 	
