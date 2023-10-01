@@ -1,4 +1,4 @@
-package FastCampus;
+package brute_force;
 
 import java.io.*;
 import java.util.*;
@@ -18,7 +18,7 @@ public class c4_15650 {
 	
 	static void rec_func(int k) {
 		if (k == m+1) {
-			for(int i=1; i<=m; i++) sb.append(selected[i]).append(' ');
+			for(int i=1; i <=m; i++) sb.append(selected[i]).append(' ');
 			sb.append('\n');
 		} else {
 			for (int cand=selected[k-1]; cand<=n; cand++) {

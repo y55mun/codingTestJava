@@ -1,4 +1,4 @@
-package FastCampus;
+package brute_force;
 
 import java.io.*;
 import java.util.*;
