@@ -22,12 +22,13 @@ public class c6_9663 {
 		return false;
 	}
 	
+	// 모든 퀸이 서로 공격할 수 없다면 true 리턴, 서로 공격할 수 있는 퀸이 있다면 false 리턴
 	static boolean validity_check() {
 		for (int i=1; i<=n; i++) {
 			// (i, col[i])
 			for(int j=1; j<=i; j++) {
 				// (j, col[j])
-				if (attackable(i, col[i], j, col[j])) {
+				if (attackable(i, col[i], j, col[j])) {	// 두 퀸이 서로 공격 가능 하므로 false 리턴
 					return false;
 				}
 			}
