@@ -45,7 +45,7 @@ public class c6_9663 {
 			for(int c=1; c<=n; c++) {
 				boolean possible = true;
 				// valid check(row, c) 
-				for (int i=1; i<=row-1; i++) {
+				for (int i=1; i<=row-1; i++) {	// 이전에 놓였던 퀸들을 확인
 					// (i, col[i])
 					if (attackable(row, c, i, col[i])) {
 						possible = false;
