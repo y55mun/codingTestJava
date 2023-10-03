@@ -9,7 +9,7 @@ public class c6_9663 {
 	
 	static void input() {
 		n = scan.nextInt();
-		col = new int[n+1];
+		col = new int[n+1];	// col[i]: i번 행의 퀸은 col[i]번 열에 놓았다는 기록
 	}
 	
 	static int n, ans;
@@ -36,10 +36,11 @@ public class c6_9663 {
 		return true;
 	}
 	
+	// row 번 ~ n 번 행에 대해서 가능한 퀸을 놓는 경우의 수 구하기
 	static void rec_func(int row) {
-		if(row == n+1) {
+		if(row == n+1) {	// 각 행마다 잘 놓았다!
 			ans++;
-		} else {
+		} else {	// row번째 행에 모두 놓아보아야 하는 경우
 			for(int c=1; c<=n; c++) {
 				boolean possible = true;
 				// valid check(row, c) 
