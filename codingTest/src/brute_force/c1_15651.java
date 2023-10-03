@@ -24,6 +24,7 @@ public class c1_15651 {
 			for(int cand=1; cand<=n; cand++) {
 				selected[k] = cand;
 				
+				// k+1 ~ m 번을 모두 탐색해야함
 				rec_func(k+1);
 				selected[k] = 0;
 			}
