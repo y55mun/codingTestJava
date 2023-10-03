@@ -16,18 +16,19 @@ public class c4_15650 {
 	static int n,m;
 	static int[] selected;
 	
-	static void rec_func(int k) {
-		if (k == m+1) {
-			for(int i=1; i <=m; i++) sb.append(selected[i]).append(' ');
-			sb.append('\n');
-		} else {
-			for (int cand=selected[k-1]; cand<=n; cand++) {
-				selected[k] = cand;
-				rec_func(k+1);
-				selected[k] = 0;
-			}
-		}
-	}
+    static void rec_func(int k) {
+        if (k == m + 1) {
+            for (int i = 1; i <= m; i++) sb.append(selected[i]).append(' ');
+            sb.append('\n');
+        } else {
+            for (int cand = selected[k-1] + 1; cand <= n; cand++) {
+                // k 번째에 cand 가 올 수 있으면
+                selected[k] = cand;
+                rec_func(k + 1);
+                selected[k] = 0;
+            }
+        }
+    }
 	
 	public static void main(String[] args) {
 		input();
