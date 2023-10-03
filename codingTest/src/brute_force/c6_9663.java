@@ -38,14 +38,23 @@ public class c6_9663 {
 	
 	static void rec_func(int row) {
 		if(row == n+1) {
-			if(validity_check()) {
-				ans++;
-			}
+			ans++;
 		} else {
 			for(int c=1; c<=n; c++) {
-				col[row] = c;
-				rec_func(row+1);
-				col[row] = 0;
+				boolean possible = true;
+				// valid check(row, c) 
+				for (int i=1; i<=row-1; i++) {
+					// (i, col[i])
+					if (attackable(row, c, i, col[i])) {
+						possible = false;
+						break;
+					}
+				}
+				if(possible) {	// (row,c)에 놓는 것이 이전에 놓았던 퀸들에 의해 공격받지 않는 위치라면 재귀 호출 시작
+					col[row] = c;
+					rec_func(row+1);
+					col[row] = 0;
+				}
 			}
 		}
 	}
