@@ -17,11 +17,16 @@ public class c7_1182 {
 	static int n, s, ans;
 	static int[] nums;
 	
+	// k번째 원소를 포함시킬지 정하는 함수
+	// value: ~ k-1 번째 원소까지 골라진 원소들의 합
 	static void rec_func(int k, int value) {
-		if(k == n+1) {
-			if(value == s) ans++;
+		if(k == n+1) {	// 부분 수열을 하나 완성 시킨 상태
+			if(value == s) ans++;	// value 가 s 와 같은지 확인
 		} else {
+			// k번째 원소를 포함 시키고 싶은 경우
 			rec_func(k+1, value+nums[k]);
+			
+			// k번째 원소를 포함 시키지 않은 경우
 			rec_func(k+1, value);
 		}
 	}
@@ -30,6 +35,8 @@ public class c7_1182 {
 		input();
 		rec_func(1, 0);
 		
+		// ans 가 정말 "진 부분집합" (비어있지 않은 집합)만 다루는지 확인!!!!
+		// s가 0일 경우 즉, 목표하는 값이 0 일 경우 아무것도 안골라도 ans가 증가하는 경우가 생김
 		if (s == 0) {
 			ans--;
 		}
