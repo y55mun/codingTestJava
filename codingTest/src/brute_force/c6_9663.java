@@ -22,21 +22,6 @@ public class c6_9663 {
 		return false;
 	}
 	
-	// 모든 퀸이 서로 공격할 수 없다면 true 리턴, 서로 공격할 수 있는 퀸이 있다면 false 리턴
-	static boolean validity_check() {
-		for (int i=1; i<=n; i++) {
-			// (i, col[i])
-			for(int j=1; j<=i; j++) {
-				// (j, col[j])
-				if (attackable(i, col[i], j, col[j])) {	// 두 퀸이 서로 공격 가능 하므로 false 리턴
-					return false;
-				}
-			}
-		}
-		
-		return true;
-	}
-	
 	// row 번 ~ n 번 행에 대해서 가능한 퀸을 놓는 경우의 수 구하기
 	static void rec_func(int row) {
 		if(row == n+1) {	// 각 행마다 잘 놓았다!
