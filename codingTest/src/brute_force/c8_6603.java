@@ -19,8 +19,8 @@ public class c8_6603 {
 				num[i] = scan.nextInt();
 			}
 			
-			sb.append('\n');
-			rec_func(0, 1);
+			rec_func(1, 1);
+			sb.append('\n');	// 테스트 케이스 사이의 새 줄
 			
 		}
 	}
@@ -31,7 +31,7 @@ public class c8_6603 {
 	
 	static void rec_func(int depth, int start) {
 	
-		if(depth == 6) {
+		if(depth == 7) {
 			for (int i=1; i<=k; i++) {
 				if (selected[i])	sb.append(num[i]).append(' ');
 			}
@@ -40,11 +40,11 @@ public class c8_6603 {
 		}
 		
 		for(int i=start; i<=k; i++) {
-			if (!selected[i]) {
+//			if (!selected[i]) {
 				selected[i] = true;
 				rec_func(depth+1, i+1);
 				selected[i] = false;
-			}
+//			}
 		}
 		
 	}
